@@ -91,15 +91,35 @@ public class TestConversion extends TestCase {
 
     //Test partition 1-9
     @Test
-    public void testOne() {
+    public void testFive() {
        Conversion conversion = new Conversion();
-       int num = 1;
-       String numStr = "one";
+       int num = 5;
+       String numStr = "five";
+       String convStr = conversion.ConvertToWords(num);
+       assertEquals(numStr, convStr);
+    }//end 1
+    
+    //Test partition 1-9
+    @Test
+    public void testNine() {
+       Conversion conversion = new Conversion();
+       int num = 9;
+       String numStr = "nine";
        String convStr = conversion.ConvertToWords(num);
        assertEquals(numStr, convStr);
     }//end 1
    
-    //test Partition 10-100
+    //test Partition 10-99
+    @Test
+    public void testTen() {
+       Conversion conversion = new Conversion();
+       int num = 10;
+       String numStr = "ten";
+       String convStr = conversion.ConvertToWords(num);
+       assertEquals(numStr, convStr);
+    }//end 25
+    
+    //test Partition 10-99
     @Test
     public void testTwentyFive() {
        Conversion conversion = new Conversion();
@@ -108,6 +128,16 @@ public class TestConversion extends TestCase {
        String convStr = conversion.ConvertToWords(num);
        assertEquals(numStr, convStr);
     }//end 25
+    
+    //test Partition 10-99
+    @Test
+    public void testNinetyNine() {
+       Conversion conversion = new Conversion();
+       int num = 99;
+       String numStr = "ninety nine";
+       String convStr = conversion.ConvertToWords(num);
+       assertEquals(numStr, convStr);
+    }//end 99
     
     //test Boundary 100
     @Test
@@ -142,6 +172,16 @@ public class TestConversion extends TestCase {
        assertEquals(numStr, convStr);
     }//end -1000000
     
+    //Test something really really small
+    @Test
+    public void testNegOneHund() {
+       Conversion conversion = new Conversion();
+       int num = -100;
+       String numStr = "negative one hundred";
+       String convStr = conversion.ConvertToWords(num);
+       assertEquals(numStr, convStr);
+    }//end -100
+   
     //test boundary -1
     @Test
     public void testNegSmallOne() {
@@ -151,16 +191,27 @@ public class TestConversion extends TestCase {
        String convStr = conversion.ConvertToWords(num);
        assertEquals(numStr, convStr);
     }//end -1
-
-   //test boundary -100
+    
+    //test -1- -9
     @Test
-    public void testNegSmallOneHundred() {
+    public void testNegFive() {
        Conversion conversion = new Conversion();
-       int num = -100;
-       String numStr = "negative one hundred";
+       int num = -5;
+       String numStr = "negative five";
        String convStr = conversion.ConvertToWords(num);
        assertEquals(numStr, convStr);
-    }//end -100
+    }//end -5
+    
+    //test -1- -9
+    @Test
+    public void testNegNine() {
+       Conversion conversion = new Conversion();
+       int num = -9;
+       String numStr = "negative 9";
+       String convStr = conversion.ConvertToWords(num);
+       assertEquals(numStr, convStr);
+    }//end -9
+
     
 //_____________________________________________________________________________
 // Operation 3 : Invalid Inputs
